@@ -7,6 +7,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/style.css';
 import MyAxios from '@/plugins/MyAxios';
+import moment from 'moment';
+
+// 全局过滤器，格式化日期
+Vue.filter('fmtDate', (value, fmstring) => {
+  return moment(value).format(fmstring);
+});
 
 // 注册MyAxios插件
 Vue.use(MyAxios);
